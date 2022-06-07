@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  appcontainer:
+    image: docker.io/bitnami/laravel:9
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_DATABASE=tunesetup
+      - DB_PASSWORD=root123
+    volumes:
+      - '../tunesetup:/app'
